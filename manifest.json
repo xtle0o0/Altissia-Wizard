@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Altissia Wizard",
-    "version": "1.0.5",
+    "version": "1.1.0",
     "description": "Altissia Wizard is a tool that helps you to get answers of exercises in Altissia langues platform.",
     "permissions": [
         "storage",
@@ -13,10 +13,13 @@
         "*://*.ofppt-langues.ma/*",
         "https://app.ofppt-langues.ma/*",
         "*://*.altissia.org/*",
-        "*://*/platform/learning-path/*"
+        "*://*/platform/learning-path/*",
+        "*://*/platform/retake/language-assessment*",
+        "https://generativelanguage.googleapis.com/*"
     ],
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "background.js",
+        "type": "module"
     },
     "content_scripts": [
         {
@@ -24,6 +27,7 @@
                 "*://*/platform/learning-path/mission/*/activity/*",
                 "*://*/platform/learning-path/mission/*/lesson/*",
                 "*://*/platform/learning-path/mission/*/lesson/*/activity/*",
+                "*://*/platform/retake/language-assessment*",
                 "*://*.ofppt-langues.ma/*",
                 "https://app.ofppt-langues.ma/*",
                 "*://*.altissia.org/*",
@@ -37,7 +41,7 @@
     ],
     "web_accessible_resources": [
         {
-            "resources": ["interceptor.js", "autoClicker.js", "pronunciationHandler.js"],
+            "resources": ["interceptor.js", "autoClicker.js", "pronunciationHandler.js", "geminiAI.js"],
             "matches": ["<all_urls>"]
         }
     ],
