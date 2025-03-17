@@ -1,7 +1,7 @@
 // Background script for Altissia Wizard extension
 
 // Gemini API configuration
-const GEMINI_API_KEY = 'AIzaSyBbxakAsJChm4H3BKaeVMDdZqjPWjqPzR8';
+const GEMINI_API_KEY = ''; // Replace with your actual Gemini API key
 const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
 // Debug flag - set to true for detailed logging
